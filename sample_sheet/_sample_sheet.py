@@ -76,6 +76,7 @@ class ReadStructure:
     _template_pattern = re.compile(r'(\d+T)')
 
     def __init__(self, structure: str):
+        structure = structure.strip()
         if not bool(self._valid_pattern.match(structure)):
             raise ValueError(f'Not a valid read structure: "{structure}"')
         self.structure = structure
